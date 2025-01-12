@@ -1,0 +1,104 @@
+[project]
+name = "art-tools"
+version = "0.1.0"
+description = "Random art tools for source art creation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+
+[tool.ruff]
+# src = ["config", "core"]
+target-version = "py311"
+fix = true
+show-fixes = false
+line-length = 128
+indent-width = 4
+namespace-packages = ["art/config", "art/core"]
+respect-gitignore = true
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "__pycache__",
+    "_build",
+    "buck-out",
+    "_build",
+    "build",
+    "_dist",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+[tool.ruff.lint.isort]
+case-sensitive = true
+order-by-type = true
+split-on-trailing-comma = false
+lines-after-imports = 2
+relative-imports-order = "furthest-to-closest"
+no-sections = false
+no-lines-before = ["future", "standard-library"]
+section-order = [
+    "future",
+    "standard-library",
+    "first-party",
+    "local-folder",
+    "third-party",
+]
+
+[tool.ruff.lint]
+preview = true
+fixable = ["ALL"]
+unfixable = []
+select = [
+    "E4",     # Rules related to incorrect import statements
+    "E7",     # "Pycodestyle" standard related to "too many lines in a function" or "function too long"
+    "E9",     # Rules related to io and syntax errors
+    "F",      # Rules related to PyFlakes errors (e.g., unused imports, undefined names)
+    "N",      # Rules related to pep8-naming
+    "RUF034", # Useless if-else condition
+    "RUF048", # An enum class should not be decorated with @dataclass
+    "RUF056", # Plain string pattern passed to re function
+    "RUF057", # Value being rounded is already an integer
+]
+extend-select = [
+    "I", # Sorts imports
+]
+ignore = [
+    "F401", # Ignore "unused import" warnings
+    "E402", # Ignore "module level import not at top of file" warnings
+    "E501", # Ignore line too long ({width} > {limit})
+]
+typing-modules = ["airflow.typing_compat"]
+task-tags = ["HACK", "TODO", "FIXME", "DEBUG", "NOTE", "REVIEW"]
+logger-objects = ["logger.get"]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.pycodestyle]
+ignore-overlong-task-comments = true
+
+[tool.ruff.format]
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

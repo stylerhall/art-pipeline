@@ -1,0 +1,38 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "ruff.enable": true,
+        "ruff.configuration": ".ruff.toml",
+        "ruff.fixAll": true,
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python.exe",
+        "python.envFile": "",
+        "pythonIndent.trimLinesWithOnlyWhitespace": true,
+        "python.createEnvironment.trigger": "off",
+        "python.globalModuleInstallation": false,
+        "python.autoComplete.extraPaths": [],
+        "python.analysis.typeCheckingMode": "standard",
+        "python.analysis.indexing": true,
+        "python.analysis.extraPaths": [
+            "${workspaceFolder}/.venv/lib/python3.11/site-packages"
+        ],
+        "python.analysis.autoSearchPaths": true,
+        "[python]": {
+            "editor.formatOnType": false,
+            "editor.wordBasedSuggestions": "allDocuments",
+            "diffEditor.ignoreTrimWhitespace": false,
+            "editor.defaultFormatter": "charliermarsh.ruff",
+            "editor.formatOnSave": true,
+            "editor.codeActionsOnSave": {
+                "source.fixAll": "always",
+                "source.organizeImports": "always"
+            },
+            "gitlens.codeLens.symbolScopes": [
+                "!Module"
+            ],
+        }
+    }
+}
