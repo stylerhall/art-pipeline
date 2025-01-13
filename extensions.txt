@@ -3,7 +3,6 @@ bam.vscode-perforce
 batisteo.vscode-django
 bungcip.better-toml
 charliermarsh.ruff
-djsaunders1997.uv-wingman
 donjayamanne.python-environment-manager
 donjayamanne.python-extension-pack
 eamodio.gitlens
